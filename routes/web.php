@@ -21,6 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/new', function () {
+    dd('hello new project');
+});
 
 
 // 自訂放上面
