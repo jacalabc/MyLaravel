@@ -15,7 +15,7 @@
         {{-- <h1>Hello, {{ $name }}</h1> --}}
         {{-- <h1>{{ $price }}</h1> --}}
         
-        @foreach ($dataXDXD as $item)
+        @foreach ($data as $item)
             <p>{{$item['name']}} --- {{$item['mobile']}}</p>
         @endforeach
 </body>

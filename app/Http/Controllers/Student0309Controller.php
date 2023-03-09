@@ -4,37 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+use App\Models\Student;
+
+class Student0309Controller extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // dd('123');
-        // return view('student.index');
-        // return view('student.index',['name'=>'去IKEA吃冰淇淋','price'=>'1枝10元']);
-        $data=[
-            ['name'=>'amy',
-            'mobile'=>'0911-111-111'
-            ],
-            ['name'=>'bob',
-            'mobile'=>'0922-222-222'
-            ],
-            ['name'=>'amy',
-            'mobile'=>'0933-333-333'
-            ],
-        ];
-        return view('student.index',['data'=>$data]);
-    }
+        // dd('hello');
+        $data = Student::get();
 
+        // dd($data);
+        return view('student.student0309',['data'=>$data]);
+    }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        // dd('create');
+        return view('student.create');
     }
 
     /**
@@ -42,7 +34,15 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd('hello store');
+        $data = new Student;
+
+        $data->name=$request->name;
+        $data->age=$request->age;
+
+        $data->save();
+
+        return redirect()->route('student0309.index');
     }
 
     /**
@@ -76,17 +76,4 @@ class StudentController extends Controller
     {
         //
     }
-
-    public function excel()
-    {
-        // dd('123');
-        return view('student.excel');
-    }
-
-    public function child()
-    {
-        // dd('123');
-        return view('child');
-    }
-    
 }

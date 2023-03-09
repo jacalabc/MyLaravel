@@ -6,6 +6,8 @@ use App\Http\Controllers\StudentController;
 
 use App\Http\Controllers\IkeaController;
 
+use App\Http\Controllers\Student0309Controller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,3 +42,7 @@ Route::get('f2', [IkeaController::class, 'f2'])->name('ikea.2');
 Route::get('f3', [IkeaController::class, 'f3'])->name('ikea.3');
 
 Route::resource('/ikeas',IkeaController::class);
+
+// Student0309Controller
+
+Route::resource('/student0309',Student0309Controller::class);
