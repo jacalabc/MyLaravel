@@ -44,5 +44,5 @@ Route::get('f3', [IkeaController::class, 'f3'])->name('ikea.3');
 Route::resource('/ikeas',IkeaController::class);
 
 // Student0309Controller
-
+Route::get('excel0309', [Student0309Controller::class, 'excel'])->name('printexcel');
 Route::resource('/student0309',Student0309Controller::class);
